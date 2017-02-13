@@ -10,6 +10,10 @@
     android:paddingTop="@dimen/activity_vertical_margin_top"
     tools:context="com.beti.teacher.best.restandroid.presentation.MainActivity">
 
+    <!-- TODO: Utwórz styl dla każdego komponentu -->
+    <!-- TODO: Wymiary powinny sie znajdować w pliku dimens, a nie być hardkodowane -->
+    <!-- TODO: Czy na pewno każdy komponent potrzebuje aż tylu atrybutów? -->
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

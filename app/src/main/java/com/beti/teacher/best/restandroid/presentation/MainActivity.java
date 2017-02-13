@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Dla celów testowych. Wyodrębnić do osobnego serwisu
+    // TODO: to jak juz testujesz to porządnie, to co jest niżej nie powinno być w tej warstwie
     private void generatePostRequest(Integer id) {
 
         UserServiceInterface userServiceInterface = (UserServiceInterface) RestServiceGenerator.createHttpService(UserServiceInterface.class);
