@@ -10,21 +10,14 @@
     android:paddingTop="@dimen/activity_vertical_margin_top"
     tools:context="com.beti.teacher.best.restandroid.presentation.MainActivity">
 
-    <!-- TODO: Utwórz styl dla każdego komponentu -->
-    <!-- TODO: Wymiary powinny sie znajdować w pliku dimens, a nie być hardkodowane -->
-    <!-- TODO: Czy na pewno każdy komponent potrzebuje aż tylu atrybutów? -->
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:ems="10"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="@dimen/input_margin_top"
         android:id="@+id/messageLengthField" />
 
     <TextView
@@ -34,21 +27,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/messageLengthField"
         android:layout_alignStart="@+id/messageLengthField"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin_top"
         android:id="@+id/lengthInput"
         />
-
-    <TextView
-        android:text="@string/generated_message_label_get"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/generate_button"
-        android:layout_alignLeft="@+id/messageLengthField"
-        android:layout_alignStart="@+id/messageLengthField"
-        android:layout_marginLeft="23dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="44dp"
-        android:id="@+id/generationMessageLabel" />
 
     <Button
         android:text="@string/generate_button"
@@ -64,7 +45,7 @@
         android:text="@string/generated_message_label_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin_top"
         android:id="@+id/textView"
         android:layout_below="@+id/generationMessageLabel"
         android:layout_alignLeft="@+id/generationMessageLabel"
@@ -78,8 +59,8 @@
         android:layout_above="@+id/textView"
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView"
-        android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp" />
+
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -89,4 +70,14 @@
         android:layout_alignBottom="@+id/textView"
         android:layout_alignLeft="@+id/generatedMessage"
         android:layout_alignStart="@+id/generatedMessage" />
+
+    <TextView
+        android:text="@string/generated_message_label_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/generationMessageLabel"
+        android:layout_below="@+id/generate_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

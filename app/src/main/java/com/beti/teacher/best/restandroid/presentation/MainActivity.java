@@ -8,14 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.beti.teacher.best.restandroid.R;
+import com.beti.teacher.best.restandroid.business.UserService;
 import com.beti.teacher.best.restandroid.business.async.UserRestProcessor;
-import com.beti.teacher.best.restandroid.business.UserServiceInterface;
-import com.beti.teacher.best.restandroid.entity.User;
-import com.beti.teacher.best.restandroid.util.RestServiceGenerator;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView generatedMessage;
     private TextView postGeneratedMessage;
 
+    private UserService userService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         generatedMessage = (TextView) findViewById(R.id.generatedMessage);
         messageLength = (EditText) findViewById(R.id.messageLengthField);
         postGeneratedMessage = (TextView) findViewById(R.id.postGeneratedMessage);
+
+        userService = new UserService();
     }
 
     public void processRestRequest(View view) {
@@ -46,28 +44,8 @@ public class MainActivity extends AppCompatActivity {
         new UserRestProcessor(id, generatedMessage).execute();
     }
 
-    // Dla celów testowych. Wyodrębnić do osobnego serwisu
-    // TODO: to jak juz testujesz to porządnie, to co jest niżej nie powinno być w tej warstwie
     private void generatePostRequest(Integer id) {
-
-        UserServiceInterface userServiceInterface = (UserServiceInterface) RestServiceGenerator.createHttpService(UserServiceInterface.class);
-        Call<User> userCall = userServiceInterface.getUserByIdPost(id);
-        userCall.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if(response.isSuccessful()) {
-                    postGeneratedMessage.setText(response.body().getName());
-                } else {
-                    Log.i(TAG, "Response was not successful");
-                }
-            }
-
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Log.d(TAG, "Failure getting response", t);
-            }
-        });
-
+        userService.generatePostRequest(id, postGeneratedMessage);
     }
 
 }
