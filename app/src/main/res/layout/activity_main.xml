@@ -10,6 +10,9 @@
     android:paddingTop="@dimen/activity_vertical_margin_top"
     tools:context="com.beti.teacher.best.restandroid.presentation.MainActivity">
 
+    <!-- TODO: wciąż nie ma stylów -->
+    <!-- TODO: nadal nadmiarowe atrybuty -->
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
