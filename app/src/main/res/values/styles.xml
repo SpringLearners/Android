@@ -6,6 +6,19 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <!-- USER ACTIVITY STYLES-->
+    <style name="userConstantLabelStyle" parent="AppTheme">
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin_right</item>
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin_top</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="userResponsiveLabelStyle" parent="userConstantLabelStyle">
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

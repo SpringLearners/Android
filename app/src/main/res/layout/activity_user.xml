@@ -8,27 +8,21 @@
     android:paddingLeft="@dimen/activity_horizontal_margin_left"
     android:paddingRight="@dimen/activity_horizontal_margin_right"
     android:paddingTop="@dimen/activity_vertical_margin_top"
-    tools:context="com.beti.teacher.best.restandroid.presentation.MainActivity">
-
-    <!-- TODO: wciąż nie ma stylów -->
-    <!-- TODO: nadal nadmiarowe atrybuty -->
+    tools:context="com.android.learning.best.restandroid.presentation.user.UserActivity">
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="@dimen/input_margin_top"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin_right"
         android:id="@+id/messageLengthField" />
 
-    <TextView
+    <TextView style="@style/userConstantLabelStyle"
         android:text="@string/count_to_generate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/messageLengthField"
         android:layout_alignStart="@+id/messageLengthField"
         android:layout_marginTop="@dimen/activity_vertical_margin_top"
         android:id="@+id/lengthInput"
@@ -41,46 +35,32 @@
         android:id="@+id/generate_button"
         android:onClick="processRestRequest"
         android:layout_alignBaseline="@+id/messageLengthField"
-        android:layout_alignBottom="@+id/messageLengthField"
-        android:layout_toRightOf="@+id/messageLengthField" />
+        android:layout_toEndOf="@+id/messageLengthField" />
 
-    <TextView
+    <TextView style="@style/userConstantLabelStyle"
         android:text="@string/generated_message_label_post"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_vertical_margin_top"
-        android:id="@+id/textView"
+        android:id="@+id/postLabel"
         android:layout_below="@+id/generationMessageLabel"
         android:layout_alignLeft="@+id/generationMessageLabel"
         android:layout_alignStart="@+id/generationMessageLabel" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="italic"
+    <TextView style="@style/userResponsiveLabelStyle"
         android:id="@+id/generatedMessage"
-        android:layout_above="@+id/textView"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView"
+        android:layout_above="@+id/postLabel"
+        android:layout_toEndOf="@+id/postLabel"
 
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView style="@style/userResponsiveLabelStyle"
         android:id="@+id/postGeneratedMessage"
-        android:layout_alignBaseline="@+id/textView"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_alignLeft="@+id/generatedMessage"
+        android:layout_alignBaseline="@+id/postLabel"
+        android:layout_alignBottom="@+id/postLabel"
         android:layout_alignStart="@+id/generatedMessage" />
 
-    <TextView
+    <TextView style="@style/userConstantLabelStyle"
         android:text="@string/generated_message_label_get"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:id="@+id/generationMessageLabel"
         android:layout_below="@+id/generate_button"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.beti.teacher.best.restandroid.entity;
+package com.android.learning.best.restandroid.entity;
 
 public class User {
 

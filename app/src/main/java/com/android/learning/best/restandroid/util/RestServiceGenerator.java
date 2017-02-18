@@ -1,9 +1,10 @@
-package com.beti.teacher.best.restandroid.util;
+package com.android.learning.best.restandroid.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
@@ -21,6 +22,7 @@ public class RestServiceGenerator {
         return new Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build().create(interfaceClass);
     }
 }
