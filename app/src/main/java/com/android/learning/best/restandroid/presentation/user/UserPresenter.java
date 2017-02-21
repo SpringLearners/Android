@@ -8,7 +8,7 @@ import com.android.learning.best.restandroid.entity.User;
 import rx.Observable;
 import rx.Subscriber;
 
-public class UserPresenter {
+class UserPresenter {
 
     private UserView userView;
 
@@ -16,12 +16,12 @@ public class UserPresenter {
 
     private static final String TAG = "userPresenter";
 
-    public UserPresenter(UserView userView) {
+    UserPresenter(UserView userView) {
         this.userView = userView;
         this.userService = new UserService();
     }
 
-    public void sendRequests(Integer responseLength) {
+    void sendRequests(Integer responseLength) {
         processGetRequest(responseLength);
         processPostRequest(responseLength);
     }

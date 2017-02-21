@@ -1,6 +1,6 @@
 package com.android.learning.best.restandroid.presentation.user;
 
-public interface UserView {
+interface UserView {
 
     void setGetRequest(String getData);
 

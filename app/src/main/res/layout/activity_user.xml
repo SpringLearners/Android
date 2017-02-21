@@ -5,62 +5,66 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin_bottom"
-    android:paddingLeft="@dimen/activity_horizontal_margin_left"
-    android:paddingRight="@dimen/activity_horizontal_margin_right"
+    android:paddingStart="@dimen/activity_horizontal_margin_left"
+    android:paddingEnd="@dimen/activity_horizontal_margin_right"
     android:paddingTop="@dimen/activity_vertical_margin_top"
     tools:context="com.android.learning.best.restandroid.presentation.user.UserActivity">
 
+    <!-- Każdy komponent powinien mieć styl-->
+
     <EditText
+        android:id="@+id/messageLengthField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="@dimen/input_margin_top"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin_right"
-        android:id="@+id/messageLengthField" />
+        android:layout_marginEnd="@dimen/activity_horizontal_margin_right" />
 
-    <TextView style="@style/userConstantLabelStyle"
+    <!-- marginTop już masz w stylu-->
+    <TextView
+        android:id="@+id/lengthInput"
+        style="@style/userConstantLabelStyle"
         android:text="@string/count_to_generate"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/messageLengthField"
-        android:layout_marginTop="@dimen/activity_vertical_margin_top"
-        android:id="@+id/lengthInput"
-        />
+        android:layout_marginTop="@dimen/activity_vertical_margin_top" />
 
     <Button
+        android:id="@+id/generate_button"
         android:text="@string/generate_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/generate_button"
         android:onClick="processRestRequest"
         android:layout_alignBaseline="@+id/messageLengthField"
         android:layout_toEndOf="@+id/messageLengthField" />
 
-    <TextView style="@style/userConstantLabelStyle"
-        android:text="@string/generated_message_label_post"
-        android:layout_marginTop="@dimen/activity_vertical_margin_top"
+    <!-- zazwyczaj dla czytelności pierwszy atrybut to id, a drugi styl-->
+    <TextView
         android:id="@+id/postLabel"
+        style="@style/userConstantLabelStyle"
+        android:text="@string/generated_message_label_post"
         android:layout_below="@+id/generationMessageLabel"
-        android:layout_alignLeft="@+id/generationMessageLabel"
         android:layout_alignStart="@+id/generationMessageLabel" />
 
-    <TextView style="@style/userResponsiveLabelStyle"
+    <TextView
         android:id="@+id/generatedMessage"
+        style="@style/userResponsiveLabelStyle"
         android:layout_above="@+id/postLabel"
-        android:layout_toEndOf="@+id/postLabel"
+        android:layout_toEndOf="@+id/postLabel" />
 
-        />
-
-    <TextView style="@style/userResponsiveLabelStyle"
+    <TextView
         android:id="@+id/postGeneratedMessage"
+        style="@style/userResponsiveLabelStyle"
         android:layout_alignBaseline="@+id/postLabel"
         android:layout_alignBottom="@+id/postLabel"
         android:layout_alignStart="@+id/generatedMessage" />
 
-    <TextView style="@style/userConstantLabelStyle"
-        android:text="@string/generated_message_label_get"
+    <TextView
         android:id="@+id/generationMessageLabel"
+        style="@style/userConstantLabelStyle"
+        android:text="@string/generated_message_label_get"
         android:layout_below="@+id/generate_button"
         android:layout_alignParentStart="true" />
 </RelativeLayout>
